@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import MakeWheatherCard from "./components/wheatherCard"
+import Input from './components/input';
 
 function App() {
   const cities = [
@@ -22,7 +23,12 @@ function App() {
     },
   ];
   return (
-    <div className="min-h-screen flex justify-center items-center flex-wrap">
+
+    <div className="flex flex-col items-center">
+      <div className="my-3">
+      <Input></Input>
+      </div>
+      <div className="min-h-screen flex justify-center items-center flex-wrap">
       {
         cities.map((city,index) =>
           <MakeWheatherCard
@@ -31,6 +37,7 @@ function App() {
           color_name = {city.color_name}  />
         )
       }
+      </div>
       </div>
   );
 }
